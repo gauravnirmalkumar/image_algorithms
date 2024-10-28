@@ -1,5 +1,3 @@
-# main.py
-
 import tkinter as tk
 from tkinter import ttk, filedialog
 from PIL import Image, ImageTk
@@ -39,21 +37,64 @@ class ImageProcessingUI:
         self.upload_button.pack(pady=5)
 
     def setup_controls(self):
-        """Set up all the parameter control sliders"""
-        # White Balance Controls
-        wb_frame = ttk.LabelFrame(self.right_frame, text="White Balance", padding="5")
+        """Enhanced control panel with additional parameters"""
+        # Color Enhancement Controls
+        color_frame = ttk.LabelFrame(self.right_frame, text="Color Enhancement", 
+                                   padding="5")
+        color_frame.pack(fill=tk.X, pady=5)
+        
+        # Saturation control
+        self.saturation = tk.DoubleVar(value=1.5)  # Default to higher saturation
+        ttk.Label(color_frame, text="Saturation:").pack()
+        saturation_slider = ttk.Scale(color_frame, from_=0.0, to=2.0,
+                                    variable=self.saturation,
+                                    orient=tk.HORIZONTAL,
+                                    command=self.on_slider_change)
+        saturation_slider.pack(fill=tk.X)
+        
+        # Contrast control
+        self.contrast = tk.DoubleVar(value=1.2)  # Default to slightly higher contrast
+        ttk.Label(color_frame, text="Contrast:").pack()
+        contrast_slider = ttk.Scale(color_frame, from_=0.5, to=1.5,
+                                  variable=self.contrast,
+                                  orient=tk.HORIZONTAL,
+                                  command=self.on_slider_change)
+        contrast_slider.pack(fill=tk.X)
+        
+        # Color temperature control
+        self.temperature = tk.IntVar(value=0)
+        ttk.Label(color_frame, text="Color Temperature:").pack()
+        temp_slider = ttk.Scale(color_frame, from_=-100, to=100,
+                              variable=self.temperature,
+                              orient=tk.HORIZONTAL,
+                              command=self.on_slider_change)
+        temp_slider.pack(fill=tk.X)
+
+        # White Balance Controls with strength
+        wb_frame = ttk.LabelFrame(self.right_frame, text="White Balance", 
+                                padding="5")
         wb_frame.pack(fill=tk.X, pady=5)
         
         self.wb_enabled = tk.BooleanVar(value=True)
-        ttk.Checkbutton(wb_frame, text="Enable", variable=self.wb_enabled,
+        ttk.Checkbutton(wb_frame, text="Enable", 
+                       variable=self.wb_enabled,
                        command=self.process_and_display).pack()
+        
+        self.wb_strength = tk.DoubleVar(value=1.0)
+        ttk.Label(wb_frame, text="Strength:").pack()
+        wb_slider = ttk.Scale(wb_frame, from_=0.0, to=2.0,
+                            variable=self.wb_strength,
+                            orient=tk.HORIZONTAL,
+                            command=self.on_slider_change)
+        wb_slider.pack(fill=tk.X)
 
         # Denoise Controls
         denoise_frame = ttk.LabelFrame(self.right_frame, text="Denoising", padding="5")
         denoise_frame.pack(fill=tk.X, pady=5)
         
         self.denoise_enabled = tk.BooleanVar(value=True)
-        ttk.Checkbutton(denoise_frame, text="Enable", variable=self.denoise_enabled,
+        ttk.Checkbutton(denoise_frame, text="Enable", 
+                       variable=self.denoise_enabled,
                        command=self.process_and_display).pack()
         
         self.kernel_size = tk.IntVar(value=5)
@@ -70,7 +111,8 @@ class ImageProcessingUI:
         gamma_frame.pack(fill=tk.X, pady=5)
         
         self.gamma_enabled = tk.BooleanVar(value=True)
-        ttk.Checkbutton(gamma_frame, text="Enable", variable=self.gamma_enabled,
+        ttk.Checkbutton(gamma_frame, text="Enable", 
+                       variable=self.gamma_enabled,
                        command=self.process_and_display).pack()
         
         self.gamma_value = tk.DoubleVar(value=2.2)
@@ -86,7 +128,8 @@ class ImageProcessingUI:
         sharp_frame.pack(fill=tk.X, pady=5)
         
         self.sharp_enabled = tk.BooleanVar(value=True)
-        ttk.Checkbutton(sharp_frame, text="Enable", variable=self.sharp_enabled,
+        ttk.Checkbutton(sharp_frame, text="Enable", 
+                       variable=self.sharp_enabled,
                        command=self.process_and_display).pack()
         
         self.sharp_strength = tk.DoubleVar(value=1.0)
@@ -127,6 +170,10 @@ class ImageProcessingUI:
         # Gather current parameters
         params = {
             'wb_enabled': self.wb_enabled.get(),
+            'wb_strength': self.wb_strength.get(),
+            'temperature': self.temperature.get(),
+            'contrast': self.contrast.get(),
+            'saturation': self.saturation.get(),
             'denoise_enabled': self.denoise_enabled.get(),
             'kernel_size': self.kernel_size.get(),
             'gamma_enabled': self.gamma_enabled.get(),
