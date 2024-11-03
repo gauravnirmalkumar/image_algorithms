@@ -16,6 +16,28 @@ class ModernHDRProcessor:
         self.window.configure(bg='#f0f0f0')
         self.window.geometry("1280x900")
         
+        # Create main canvas with scrollbar
+        self.canvas = tk.Canvas(self.window, bg='#f0f0f0')
+        self.scrollbar = ttk.Scrollbar(self.window, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = ttk.Frame(self.canvas, style='Modern.TFrame')
+        
+        # Configure scrolling
+        self.scrollable_frame.bind(
+            "<Configure>",
+            lambda e: self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+        )
+        
+        # Create window inside canvas
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
+        
+        # Pack scrolling components
+        self.canvas.pack(side="left", fill="both", expand=True)
+        self.scrollbar.pack(side="right", fill="y")
+        
+        # Add mousewheel scrolling
+        self.canvas.bind_all("<MouseWheel>", self._on_mousewheel)
+        
         # Style configuration
         self.style = ttk.Style()
         self.style.configure('Modern.TFrame', background='#f0f0f0')
@@ -32,7 +54,7 @@ class ModernHDRProcessor:
         
         # HDR Processing parameters
         self.hdr_params = {
-            'gamma': 0.77,
+            'gamma': 1,
             'alpha': 0.35,
             'gamma_local': 1.5
         }
@@ -45,7 +67,7 @@ class ModernHDRProcessor:
         }
         
         self.tone_mapping_algorithms = {
-            'Local Tone Mapping': self.tone_map,
+            'Local Tone Mapping': self.local_tone_map,
             'Reinhard': self.tone_map_reinhard,
             'Drago': self.tone_map_drago,
             'Mantiuk': self.tone_map_mantiuk
@@ -53,8 +75,12 @@ class ModernHDRProcessor:
         
         self.setup_ui()
 
+    def _on_mousewheel(self, event):
+        """Handle mousewheel scrolling"""
+        self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
     def setup_ui(self):
-        main_frame = ttk.Frame(self.window, style='Modern.TFrame')
+        main_frame = ttk.Frame(self.scrollable_frame, style='Modern.TFrame')
         main_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
         
         # Title
@@ -111,7 +137,7 @@ class ModernHDRProcessor:
         ttk.Label(gamma_frame, textvariable=self.gamma_value, style='Modern.TLabel').pack(side=tk.RIGHT)
         self.gamma_scale = ttk.Scale(self.local_params_frame, from_=0.1, to=3.0, orient=tk.HORIZONTAL,
                                    command=lambda v: self.gamma_value.set(f"{float(v):.2f}"))
-        self.gamma_scale.set(0.77)
+        self.gamma_scale.set(1)
         self.gamma_scale.pack(fill=tk.X)
         
         # Processing buttons
@@ -620,7 +646,7 @@ class ModernHDRProcessor:
             
             # Update parameters from UI
             self.hdr_params.update({
-                'lambda_': 50,
+                'lambda_': 10,
                 'gamma': self.gamma_scale.get(),
                 'saturation_local': 2
             })
@@ -659,31 +685,61 @@ class ModernHDRProcessor:
             
         return hdr_image
 
-    def tone_map(self, hdr_image):
+    def local_tone_map(self, hdr_image):
         """
-        Implement robust tone mapping to convert HDR to LDR
+        Implement local tone mapping to convert HDR to LDR with CLAHE, preserving color using LAB color space.
+        Added color preservation and improved normalization.
         """
-        gamma = self.hdr_params['gamma']
-        
+        gamma = self.hdr_params.get('gamma', 1.0)
+        clip_limit = self.hdr_params.get('clip_limit', 2.0)
+        tile_grid_size = self.hdr_params.get('tile_grid_size', (8, 8))
+
         # Handle NaN and Inf values
         hdr_image = np.nan_to_num(hdr_image, nan=0.0, posinf=1.0, neginf=0.0)
         
-        # Ensure positive values
-        hdr_image = np.maximum(hdr_image, 1e-8)
+        # Store original colors for later use
+        original_colors = np.copy(hdr_image)
         
-        # Normalize to [0, 1] with robust min/max
-        min_val = np.percentile(hdr_image, 1)  # Use 1st percentile instead of min
-        max_val = np.percentile(hdr_image, 99)  # Use 99th percentile instead of max
+        # Calculate luminance (using RGB to grayscale weights)
+        luminance = 0.2989 * hdr_image[:,:,0] + 0.5870 * hdr_image[:,:,1] + 0.1140 * hdr_image[:,:,2]
         
-        # Avoid division by zero
-        if max_val - min_val < 1e-8:
-            max_val = min_val + 1e-8
-            
-        img_norm = np.clip((hdr_image - min_val) / (max_val - min_val), 0, 1)
+        # Normalize luminance
+        luminance = np.maximum(luminance, 1e-8)
+        min_lum = np.percentile(luminance, 1)
+        max_lum = np.percentile(luminance, 99)
+        if max_lum - min_lum < 1e-8:
+            max_lum = min_lum + 1e-8
         
-        # Apply gamma correction
-        return np.power(img_norm, gamma)
-    
+        # Normalize luminance to [0, 1]
+        luminance_norm = np.clip((luminance - min_lum) / (max_lum - min_lum), 0, 1)
+        
+        # Convert normalized luminance to 8-bit
+        luminance_8bit = (luminance_norm * 255).astype(np.uint8)
+        
+        # Apply CLAHE to luminance
+        clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
+        luminance_clahe = clahe.apply(luminance_8bit)
+        
+        # Convert back to float [0, 1]
+        luminance_clahe = luminance_clahe.astype(np.float32) / 255.0
+        
+        # Apply gamma correction to luminance
+        luminance_clahe = np.power(luminance_clahe, gamma)
+        
+        # Color preservation: divide original RGB by original luminance and multiply by new luminance
+        luminance = np.maximum(luminance, 1e-8)  # Prevent division by zero
+        luminance = np.expand_dims(luminance, axis=2)
+        luminance_clahe = np.expand_dims(luminance_clahe, axis=2)
+        
+        # Preserve colors while applying new luminance
+        color_ratio = np.where(luminance > 1e-8, original_colors / luminance, 0)
+        result = color_ratio * luminance_clahe
+        
+        # Final clip to ensure values are in valid range
+        result = np.clip(result, 0, 1)
+        
+        return result
+        
     def merge_debevec(self, images, exposure_times):
         """
         Fixed Debevec merge with proper image conversion and error handling
