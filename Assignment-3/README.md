@@ -217,6 +217,47 @@ Here are the three input images captured at different exposures:
 
 ![hdr_result_20241103_220757](https://github.com/user-attachments/assets/fa5a2065-3e34-4b3f-bcbb-b39f22f33728)
 
+# Other examples
+
+### Example 1
+
+| Image Type         | Image                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------|
+| Low Exposure       | ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| Mid-Tone           | ![HDRI_Sample_Scene_Window_-_06](https://github.com/user-attachments/assets/d319567c-8486-4ae3-89f3-1b9005b0c702) |
+| High Exposure      | ![HDRI_Sample_Scene_Window_-_10](https://github.com/user-attachments/assets/94f701fb-c56f-4224-9a22-34b9b9949cf1) |
+| HDR Output         | ![hdr_result_20241104_175741](https://github.com/user-attachments/assets/c8f6e573-5624-4f5f-be57-b06491ff7a63)     |
+
+### Example 2
+
+| Image Type         | Image                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------|
+| Low Exposure       | ![IMG_0304](https://github.com/user-attachments/assets/e5f52aac-da4f-42ef-88f6-5e1de8fa1615) |
+| Mid-Tone           | ![IMG_0305](https://github.com/user-attachments/assets/e9a01cc3-da77-4baa-bab3-d07feec90d63) |
+| High Exposure      | ![IMG_0306](https://github.com/user-attachments/assets/0c673ee0-9336-4cfa-bd5b-82a3bae85576) |
+| HDR Output         | ![hdr_result_20241104_175128](https://github.com/user-attachments/assets/00b3e032-ae93-490e-902c-07171b94f8b3)     |
+
+### Example 3
+
+| Image Type         | Image                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------|
+| Low Exposure       | ![960px-StLouisArchMultExpEV-4 72](https://github.com/user-attachments/assets/4d259a92-46af-4771-8bfb-b6bc395a8678) |
+| Mid-Tone           | ![960px-StLouisArchMultExpEV-1 82](https://github.com/user-attachments/assets/051e20cf-704c-45c8-b359-22e3596826dd) |
+| High Exposure      | ![960px-StLouisArchMultExpEV+4 09](https://github.com/user-attachments/assets/7a337f8f-98ff-4218-91b9-5ca438da54c6) |
+| HDR Output         | ![hdr_result_20241103_230056](https://github.com/user-attachments/assets/71e21db1-1335-4c41-972f-cbbc09ade295)     |
+
+### Example 4
+
+| Image Type         | Image                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------|
+| Low Exposure       | ![12](https://github.com/user-attachments/assets/98dee389-41ef-4bb8-9931-e026dce24843)  |
+| Mid-Tone           | ![4](https://github.com/user-attachments/assets/54e4727c-75d3-4574-a1cc-bfcd3c57eb41)   |
+| High Exposure      | ![1](https://github.com/user-attachments/assets/6a87151e-4ba7-4ffd-8578-6d7c55eb08a0)   |
+| HDR Output         | ![hdr_result_20241103_233341](https://github.com/user-attachments/assets/5aada308-8e83-4516-a3e7-2ea09f8481fa)     |
+
+
+
+
 
 
 
