@@ -320,17 +320,18 @@ Overall, sharpening filters are invaluable for enhancing image clarity and detai
 ### Example 1
 
 | Image Type         | Image                                                                                   
-|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| With Demosaicing   |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
-|And Gamma Correction|
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| With Demosaicing   |    <img width="956" alt="Demosaic_ _gamma1" src="https://github.com/user-attachments/assets/97499940-d15e-4e7e-9a5a-0b2085e5cbfa">|
+|                    |                                                                                                                                   |
+|And Gamma Correction|                                                                                                                                   | 
 
 ### Example 2
 
 | Image Type         | Image                                                                                   
-|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| With Demosaicing,  |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/Assignment-1/Results/Demosaic_&_WhiteBalance_&_denoise_gamma.jpg) |
-| White Balance And  |                                                                                                                       |
-| Gamma Correction   |                                                                                                                       |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| With Demosaicing,  |  <img width="955" alt="Demosaic_ _WhiteBalance_ gamma" src="https://github.com/user-attachments/assets/065edabc-53ba-4c5b-9f7b-c6645726af5b">|                                |                    |                                                                                                                                              |
+| White Balance And  |                                                                                                                                              |
+| Gamma Correction   |                                                                                                                                              |
 
 ### Example 3
 
