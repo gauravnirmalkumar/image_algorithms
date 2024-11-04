@@ -12,7 +12,7 @@ This repository contains implementations of various image processing algorithms 
 
 ### Prerequisites
 
-- Python 3.10.11+
+- Python 3.10.11
 - OpenCV
 - NumPy
 - PyTorch (for AI-based denoising in Assignment 2)
