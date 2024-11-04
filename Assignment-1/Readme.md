@@ -317,3 +317,32 @@ While sharpening filters are powerful tools, they come with some limitations:
 
 Overall, sharpening filters are invaluable for enhancing image clarity and detail. When applied appropriately, they can significantly improve the quality of images, making them more visually compelling across various applications. However, careful consideration of the sharpening technique and parameters is essential to achieve the desired results without introducing artifacts.
 
+### Example 1
+
+| Image Type         | Image                                                                                   
+|--------------------|-----------------------------------------------------------------------------------------------------------------------|
+| With Demosaicing   |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+|And Gamma Correction|
+
+### Example 2
+
+| Image Type         | Image                                                                                   
+|--------------------|-----------------------------------------------------------------------------------------------------------------------|
+| With Demosaicing,  |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| White Balance And  |                                                                                                                       |
+| Gamma Correction   |                                                                                                                       |
+
+### Example 3
+
+| Image Type                      | Image                                                                                                       |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------|
+| With Demosaicing and Denoising, | ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| White Balance, and Gamma        |                                                                                                             |
+
+### Example 4
+
+| Image Type                             | Image                                                                                                       |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| With Demosaicing, White Balance,       | ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| Denoising, Gamma Correction, and       |                                                                                                             |
+| Sharpening                             |                                                                                                             |
