@@ -1,4 +1,4 @@
-# image_algorithms
+# Image Algorithms
 
 This repository contains three assignments, each in its own directory with individual instructions. To get started, follow the steps below.
 
@@ -10,21 +10,21 @@ This repository contains three assignments, each in its own directory with indiv
    ```
 
 ## For Assignment 1:
-Navigate to the assignment directory and follow the instructions in each README.md file
+Navigate to the assignment directory and follow the instructions in each **README.md** file
 
 ```bash
    cd Assigment-1
    ```
 
 ## For Assignment 2:
-Navigate to the assignment directory and follow the instructions in each README.md file
+Navigate to the assignment directory and follow the instructions in each **README.md** file
 
 ```bash
    cd Assigment-2
    ```
 
 ## For Assignment 3:
-Navigate to the assignment directory and follow the instructions in each README.md file
+Navigate to the assignment directory and follow the instructions in each **README.md** file
 
 ```bash
    cd Assigment-3
