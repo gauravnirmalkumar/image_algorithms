@@ -346,7 +346,8 @@ Overall, sharpening filters are invaluable for enhancing image clarity and detai
 | With Demosaicing, White Balance, Denoising, Gamma Correction, and Sharpening    |![Demosaic_ _WhiteBalance_ _denoise_gamma](https://github.com/user-attachments/assets/ee3e653a-17d8-4501-b107-4dd5e3c46253)|
 
 #Final Image After Basic ISP Implementation
-![Uploading Final_image_after_ISP.png…]()
+<img width="958" alt="Final_image_after_ISP" src="https://github.com/user-attachments/assets/463d2ec4-9ba0-4350-9015-4fad645fd29e">
+
 
 
                                                                                                                        
