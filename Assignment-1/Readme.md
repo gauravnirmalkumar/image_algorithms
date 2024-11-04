@@ -199,7 +199,7 @@ Gamma correction is a vital image processing technique used to adjust the bright
 
 Gamma is a numerical value that defines the nonlinear curve used to map the input signal (brightness values) to the output signal (display brightness). The relationship can be expressed as:
 
-\[ \text{Output} = \text{Input}^{\gamma} \]
+${Output} = {Input}^{gamma}$
 
 Where:
 - **Input**: The original brightness value.
