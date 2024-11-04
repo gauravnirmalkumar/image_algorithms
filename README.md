@@ -20,7 +20,7 @@ Navigate to the assignment directory and follow the instructions in each **READM
 Navigate to the assignment directory and follow the instructions in each **README.md** file
 
 ```bash
-   cd Assigment-2
+   cd assigment2
    ```
 
 ## For Assignment 3:
