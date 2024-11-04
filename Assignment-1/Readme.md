@@ -5,7 +5,7 @@ The program demonstrates basic ISP operations such as Debayering, noise reductio
 ## Features
 Emmetra’s ISP implementation includes the following five key algorithms for a streamlined, effective image processing pipeline:
   #### 1. Demosaic Layer with Edge-Based Interpolation :
-  Reconstructs full-color images from sensor data using edge-based interpolation, enhancing detail by minimizing color artifacts and preserving natural edges. 
+  Reconstructs full-color images from sensor data using edge-based interpolation, ehancing detail by minimizing color artifacts and preserving natural edges. 
   #### 2. White Balance
   Adjusts color temperature to ensure accurate color reproduction, correcting for different lighting conditions so whites appear neutral and colors are balanced.
   #### 3. Denoise Using a Gaussian Filter
