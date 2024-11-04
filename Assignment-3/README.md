@@ -1,6 +1,6 @@
 # HDR Image Processing Application
 
-This repository provides an application for HDR (High Dynamic Range) image processing with multiple techniques. The application is written in Python and utilizes OpenCV for Mertens merge, tone mapping, and exposure detection.
+This repository provides an application for HDR (High Dynamic Range) image processing with multiple techniques. The application is written in Python and utilizes OpenCV.
 
 ## Table of contents
 
@@ -31,8 +31,10 @@ HDR imaging allows capturing images with a higher range of luminosity levels tha
 - **Multi-Exposure Support**: Load multiple images with different exposures (underexposed, normal, overexposed) to create a single HDR image.
 - **Automatic Exposure Detection**: Identifies and categorizes input images based on their exposure levels.
 - **HDR Merging Algorithms**: Supports multiple merging algorithms, including Merten’s and Debevec's methods, for blending exposures.
+- **Image Alignment**: Automatically aligns input images to correct for slight camera movements between shots, ensuring a seamless HDR result.
 - **Tone Mapping Techniques**: Offers different tone mapping methods, such as Reinhard, Drago, Mantiuk, and Local Tone Mapping.
 - **Real-Time Preview**: Enables users to see the effect of tone mapping adjustments on the HDR output.
+- **Intuitive UI & Enhanced UX**: Designed with a user-friendly interface and optimized user experience, making HDR creation straightforward and enjoyable for users at all skill levels.
 - **Image Export**: Allows saving the processed HDR images in common formats.
 
 ## Installation
