@@ -39,11 +39,9 @@ HDR imaging allows capturing images with a higher range of luminosity levels tha
 
 ## Installation
 
-Clone the repository and install dependencies:
+ install dependencies:
 
 ```bash
-git clone <repository-url>
-cd src
 pip install -r requirements.txt
 ```
 
