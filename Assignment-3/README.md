@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 ## Running the Application
 ```bash
-python app.py
+python main.py
 ```
 The GUI will open, where you can load your images, apply tone mapping adjustments, and preview the HDR output.
 
@@ -170,7 +170,29 @@ Global Tone Mapping applies a uniform adjustment across the entire image, transf
 
 ## Example Outputs
 
-In this section, we provide an example of HDR merging and tone mapping using three differently exposed images. The final results are shown after applying Merten's Merge for HDR creation and Local Tone Mapping to enhance details.
+## Global Tone Mapping
+
+### Input Images
+The three input images below were captured at different exposure levels:
+- **Image 1**: Underexposed to capture bright highlights.
+- **Image 2**: Balanced exposure for midtones.
+- **Image 3**: Overexposed to capture shadow details.
+
+#### Input Images
+Here are the three input images captured at different exposures:
+
+##### Underexposed
+![image1](https://github.com/user-attachments/assets/b25a715d-a8ac-4376-a0c1-c1c132cb7314)
+##### Midtones 
+![image2](https://github.com/user-attachments/assets/0e803a12-c3c7-47be-bd86-32e2eb8a032e)
+##### Overexposed
+![image3](https://github.com/user-attachments/assets/c0b9bce6-2b14-4fa7-b817-0a5f28cbea9f)
+
+## Final HDR Output Using Debevec's Merge and Mantiuk Tone Mapping
+
+![hdr_result_20241104_102905](https://github.com/user-attachments/assets/e57d2fe9-a41c-4c57-8639-34a2d5a13a18)
+
+## Local Tone Mapping
 
 ### Input Images
 The three input images below were captured at different exposure levels:
@@ -193,10 +215,6 @@ Here are the three input images captured at different exposures:
 
 ![hdr_result_20241103_220757](https://github.com/user-attachments/assets/fa5a2065-3e34-4b3f-bcbb-b39f22f33728)
 
-#### Key Highlights
-- **Dynamic Range**: Merten’s Merge preserves detail across various exposure levels, ensuring that highlights and shadows are well-balanced.
-- **Enhanced Texture and Local Contrast**: Local Tone Mapping adds depth by adjusting brightness and contrast on a localized level, bringing out finer details in regions such as shadows and textured surfaces.
-- **Natural Colors**: The image maintains a natural, visually appealing color balance with saturated tones that enhance the realism.
 
 
 
