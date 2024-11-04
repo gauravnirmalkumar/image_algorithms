@@ -328,7 +328,7 @@ Overall, sharpening filters are invaluable for enhancing image clarity and detai
 
 | Image Type         | Image                                                                                   
 |--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| With Demosaicing,  |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| With Demosaicing,  |     ![HDRI_Sample_Scene_Window_-_04](https://github.com/Assignment-1/Results/Demosaic_&_WhiteBalance_&_denoise_gamma.jpg) |
 | White Balance And  |                                                                                                                       |
 | Gamma Correction   |                                                                                                                       |
 
@@ -336,7 +336,7 @@ Overall, sharpening filters are invaluable for enhancing image clarity and detai
 
 | Image Type                      | Image                                                                                                       |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------|
-| With Demosaicing and Denoising, | ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
+| With Demosaicing and Denoising, | ![Demosaic_&_WhiteBalance_&_denoise_gamma](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
 | White Balance, and Gamma        |                                                                                                             |
 
 ### Example 4
