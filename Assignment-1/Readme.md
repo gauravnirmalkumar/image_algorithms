@@ -317,33 +317,37 @@ While sharpening filters are powerful tools, they come with some limitations:
 
 Overall, sharpening filters are invaluable for enhancing image clarity and detail. When applied appropriately, they can significantly improve the quality of images, making them more visually compelling across various applications. However, careful consideration of the sharpening technique and parameters is essential to achieve the desired results without introducing artifacts.
 
-### Example 1
+### image 1
 
 | Image Type         | Image                                                                                   
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| With Demosaicing   |    <img width="956" alt="Demosaic_ _gamma1" src="https://github.com/user-attachments/assets/97499940-d15e-4e7e-9a5a-0b2085e5cbfa">|
-|                    |                                                                                                                                   |
-|And Gamma Correction|                                                                                                                                   | 
+| With Demosaicing And Gamma Correction  |    <img width="956" alt="Demosaic_ _gamma1" src="https://github.com/user-attachments/assets/97499940-d15e-4e7e-9a5a-0b2085e5cbfa">|
+                                                                                                                               | 
 
-### Example 2
+### image 2
 
 | Image Type         | Image                                                                                   
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| With Demosaicing,  |  <img width="955" alt="Demosaic_ _WhiteBalance_ gamma" src="https://github.com/user-attachments/assets/065edabc-53ba-4c5b-9f7b-c6645726af5b">|                                |                    |                                                                                                                                              |
-| White Balance And  |                                                                                                                                              |
-| Gamma Correction   |                                                                                                                                              |
+| With Demosaicing, White Balance And Gamma Correction  |  <img width="955" alt="Demosaic_ _WhiteBalance_ gamma" src="https://github.com/user-attachments/assets/065edabc-53ba-4c5b-9f7b-c6645726af5b">|                                                                                                                                                                             
+                                                                                                                                                
+                                                                                                                                                             
 
-### Example 3
+### image 3
 
-| Image Type                      | Image                                                                                                       |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------|
-| With Demosaicing and Denoising, | ![Demosaic_&_WhiteBalance_&_denoise_gamma](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
-| White Balance, and Gamma        |                                                                                                             |
+| Image Type                      | Image                                                                                                                      |         
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| With Demosaicing and Denoising,White Balance, and Gamma | ![Demosaic_ _WhiteBalance_ _denoise_gamma](https://github.com/user-attachments/assets/9aa14d17-b13f-4a2a-aab9-0755f813c8e0)|
+                                                                                                                           
 
-### Example 4
+### image 4
 
 | Image Type                             | Image                                                                                                       |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| With Demosaicing, White Balance,       | ![HDRI_Sample_Scene_Window_-_04](https://github.com/user-attachments/assets/2ee84bbc-942d-4cc8-91da-becaafaadd75) |
-| Denoising, Gamma Correction, and       |                                                                                                             |
-| Sharpening                             |                                                                                                             |
+| With Demosaicing, White Balance, Denoising, Gamma Correction, and Sharpening    |![Demosaic_ _WhiteBalance_ _denoise_gamma](https://github.com/user-attachments/assets/ee3e653a-17d8-4501-b107-4dd5e3c46253)|
+
+#Final Image After Basic ISP Implementation
+![Uploading Final_image_after_ISP.png…]()
+
+
+                                                                                                                       
+                                                                                                                                       
