@@ -1,5 +1,0 @@
-HDR Processing Parameters:
-Exposure Times: [0.15213166723763616, 0.38513474152347327, 0.652938591887453]
-Lambda: 50
-Gamma: 1.0
-Local Saturation: 2
