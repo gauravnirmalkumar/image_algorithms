@@ -120,8 +120,8 @@ python main.py
 ### Image 4: Complete Pipeline
 | Image Type | Image |
 |------------|-------|
-| With Demosaicing, White Balance, Denoising, Gamma Correction, and Sharpening | ![Uploading Demosaic_&_WhiteBalance_&_denoise_gamma_sharpen.png…]()
- |
+| With Demosaicing, White Balance, Denoising, Gamma Correction, and Sharpening |<img width="959" alt="Demosaic_ _WhiteBalance_ _denoise_gamma_sharpen" src="https://github.com/user-attachments/assets/323c007b-8bb6-4f52-b8c1-7af61ba62b70">|
+ 
 
 ### Final Result
 | Image Type | Image |
